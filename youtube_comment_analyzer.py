@@ -24,7 +24,7 @@ def tokenize_text(text):
     tokens = nltk.word_tokenize(text)
     return tokens
 
-from nltk.corpus import stopwords
+
 
 def remove_stopwords(tokens):
     stop_words = set(stopwords.words('english'))
@@ -32,7 +32,7 @@ def remove_stopwords(tokens):
     tokens = [word for word in tokens if word not in stop_words]
     return tokens
 
-from nltk.stem import WordNetLemmatizer
+
 
 def lemmatize_words(tokens):
     lemmatizer = WordNetLemmatizer()
@@ -47,7 +47,7 @@ def preprocess_text(comment):
     tokens = lemmatize_words(tokens)
     return ' '.join(tokens)
 
-from textblob import TextBlob
+
 
 def analyze_sentiment(comment):
     analysis = TextBlob(comment)
