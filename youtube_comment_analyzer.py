@@ -84,7 +84,7 @@ def plot_sentiment_distribution(sentiment_scores):
 sentiment_scores = {'positive': 30, 'neutral': 50, 'negative': 20}
 plot_sentiment_distribution(sentiment_scores)
 
-!pip install google-api-python-client
+pip install google-api-python-client
 
 import nltk
 nltk.download('punkt')
@@ -137,7 +137,7 @@ preprocessed_comments = [preprocess_text(comment) for comment in comments]
 sentiment_scores = perform_sentiment_analysis(preprocessed_comments)
 plot_sentiment_distribution(sentiment_scores)
 
-!pip install streamlit
+pip install streamlit
 
 import streamlit as st
 
@@ -257,11 +257,5 @@ if __name__ == '__main__':
     st.write("## Analyze YouTube Comments")
     st.write("Enter a YouTube video URL above to analyze comments.")
 
-if __name__ == '__main__':
-    st.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
-    st.write("## Analyze YouTube Comments")
-    st.write("Enter a YouTube video URL above to analyze comments.")
 
-!streamlit run --help
 
-!streamlit run youtube_comment_analyzer.ipynb
