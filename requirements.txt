@@ -1,7 +1,7 @@
 google-api-python-client
 streamlit
 NLTK
-streamlit as st
+streamlit
 re
 nltk
 TextBlob
