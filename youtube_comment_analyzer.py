@@ -17,14 +17,14 @@ def clean_text(text):
     text = text.lower()
     return text
 
-
+import nltk
 
 def tokenize_text(text):
     # Tokenize the text into words
     tokens = nltk.word_tokenize(text)
     return tokens
 
-
+from nltk.corpus import stopwords
 
 def remove_stopwords(tokens):
     stop_words = set(stopwords.words('english'))
@@ -32,7 +32,7 @@ def remove_stopwords(tokens):
     tokens = [word for word in tokens if word not in stop_words]
     return tokens
 
-
+from nltk.stem import WordNetLemmatizer
 
 def lemmatize_words(tokens):
     lemmatizer = WordNetLemmatizer()
@@ -47,7 +47,7 @@ def preprocess_text(comment):
     tokens = lemmatize_words(tokens)
     return ' '.join(tokens)
 
-
+from textblob import TextBlob
 
 def analyze_sentiment(comment):
     analysis = TextBlob(comment)
@@ -68,25 +68,34 @@ def perform_sentiment_analysis(preprocessed_comments):
 
     return sentiment_scores
 
-
+import matplotlib.pyplot as plt
 
 def plot_sentiment_distribution(sentiment_scores):
     labels = sentiment_scores.keys()
     sizes = [sentiment_scores[label] for label in labels]
 
-    matplotlib.pyplot.figure(figsize=(8, 6))
-    matplotlib.pyplot.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
-    matplotlib.pyplot.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    matplotlib.pyplot.title('Sentiment Distribution of Comments')
-    matplotlib.pyplot.show()
+    plt.figure(figsize=(8, 6))
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
+    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.title('Sentiment Distribution of Comments')
+    plt.show()
 
 # Example usage
 sentiment_scores = {'positive': 30, 'neutral': 50, 'negative': 20}
 plot_sentiment_distribution(sentiment_scores)
 
+!pip install google-api-python-client
 
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
-
+import re
+import nltk
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+from googleapiclient.discovery import build
 
 # Function to fetch comments using YouTube Data API
 def fetch_youtube_comments(api_key, video_id):
@@ -128,17 +137,22 @@ preprocessed_comments = [preprocess_text(comment) for comment in comments]
 sentiment_scores = perform_sentiment_analysis(preprocessed_comments)
 plot_sentiment_distribution(sentiment_scores)
 
+!pip install streamlit
 
-
-
+import streamlit as st
 
 # Define the Streamlit app
-streamlit.title('YouTube Video Analyzer')
+st.title('YouTube Video Analyzer')
 
 # Add input for YouTube video URL
-video_url = streamlit.text_input('Enter YouTube Video URL:')
+video_url = st.text_input('Enter YouTube Video URL:')
 
-
+import streamlit as st
+import re
+import nltk
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+from googleapiclient.discovery import build
 
 # Function to fetch YouTube comments using the YouTube Data API
 def fetch_youtube_comments(api_key, video_id):
@@ -212,17 +226,17 @@ def plot_sentiment_distribution(sentiment_scores):
     labels = sentiment_scores.keys()
     sizes = [sentiment_scores[label] for label in labels]
 
-    matplotlib.pyplot.figure(figsize=(8, 6))
-    matplotlib.pyplot.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
-    matplotlib.pyplot.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    matplotlib.pyplot.title('Sentiment Distribution of Comments')
-    matplotlib.pyplot.show()
+    plt.figure(figsize=(8, 6))
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
+    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.title('Sentiment Distribution of Comments')
+    plt.show()
 
 # Define the Streamlit app
-streamlit.title('YouTube Video Analyzer')
+st.title('YouTube Video Analyzer')
 
 # Add input for YouTube video URL
-video_url = streamlit.text_input('Enter YouTube Video URL:')
+video_url = st.text_input('Enter YouTube Video URL:')
 
 # Fetch comments and display sentiment analysis results
 if video_url:
@@ -234,12 +248,20 @@ if video_url:
     sentiment_scores = perform_sentiment_analysis(preprocessed_comments)
 
     # Display sentiment distribution
-    streamlit.write('### Sentiment Distribution')
+    st.write('### Sentiment Distribution')
     plot_sentiment_distribution(sentiment_scores)
 
 # Display information about the app
 if __name__ == '__main__':
-    streamlit.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
-    streamlit.write("## Analyze YouTube Comments")
-    streamlit.write("Enter a YouTube video URL above to analyze comments.")
+    st.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
+    st.write("## Analyze YouTube Comments")
+    st.write("Enter a YouTube video URL above to analyze comments.")
 
+if __name__ == '__main__':
+    st.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
+    st.write("## Analyze YouTube Comments")
+    st.write("Enter a YouTube video URL above to analyze comments.")
+
+!streamlit run --help
+
+!streamlit run youtube_comment_analyzer.ipynb
