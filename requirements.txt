@@ -1,15 +1,6 @@
-google-api-python-client
-Streamlit
-NLTK
 streamlit
-regex
-nltk
-TextBlob
+textblob
 matplotlib
-matplotlib.pyplot
-googleapiclient.discovery
-build
+google-api-python-client
+nltk
 
-punkt
-stopwords
-wordnet
