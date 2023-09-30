@@ -74,11 +74,11 @@ def plot_sentiment_distribution(sentiment_scores):
     labels = sentiment_scores.keys()
     sizes = [sentiment_scores[label] for label in labels]
 
-    plt.figure(figsize=(8, 6))
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
-    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.title('Sentiment Distribution of Comments')
-    plt.show()
+    matplotlib.pyplot.figure(figsize=(8, 6))
+    matplotlib.pyplot.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
+    matplotlib.pyplot.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    matplotlib.pyplot.title('Sentiment Distribution of Comments')
+    matplotlib.pyplot.show()
 
 # Example usage
 sentiment_scores = {'positive': 30, 'neutral': 50, 'negative': 20}
@@ -133,10 +133,10 @@ plot_sentiment_distribution(sentiment_scores)
 
 
 # Define the Streamlit app
-st.title('YouTube Video Analyzer')
+streamlit.title('YouTube Video Analyzer')
 
 # Add input for YouTube video URL
-video_url = st.text_input('Enter YouTube Video URL:')
+video_url = streamlit.text_input('Enter YouTube Video URL:')
 
 
 
@@ -212,17 +212,17 @@ def plot_sentiment_distribution(sentiment_scores):
     labels = sentiment_scores.keys()
     sizes = [sentiment_scores[label] for label in labels]
 
-    plt.figure(figsize=(8, 6))
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
-    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.title('Sentiment Distribution of Comments')
-    plt.show()
+    matplotlib.pyplot.figure(figsize=(8, 6))
+    matplotlib.pyplot.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
+    matplotlib.pyplot.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    matplotlib.pyplot.title('Sentiment Distribution of Comments')
+    matplotlib.pyplot.show()
 
 # Define the Streamlit app
-st.title('YouTube Video Analyzer')
+streamlit.title('YouTube Video Analyzer')
 
 # Add input for YouTube video URL
-video_url = st.text_input('Enter YouTube Video URL:')
+video_url = streamlit.text_input('Enter YouTube Video URL:')
 
 # Fetch comments and display sentiment analysis results
 if video_url:
@@ -234,12 +234,12 @@ if video_url:
     sentiment_scores = perform_sentiment_analysis(preprocessed_comments)
 
     # Display sentiment distribution
-    st.write('### Sentiment Distribution')
+    streamlit.write('### Sentiment Distribution')
     plot_sentiment_distribution(sentiment_scores)
 
 # Display information about the app
 if __name__ == '__main__':
-    st.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
-    st.write("## Analyze YouTube Comments")
-    st.write("Enter a YouTube video URL above to analyze comments.")
+    streamlit.set_option('deprecation.showPyplotGlobalUse', False)  # Disable a Streamlit warning
+    streamlit.write("## Analyze YouTube Comments")
+    streamlit.write("Enter a YouTube video URL above to analyze comments.")
 
