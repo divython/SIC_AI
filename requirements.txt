@@ -6,7 +6,7 @@ re
 nltk
 TextBlob
 matplotlib
-matplotlib.pyplot as plt
+matplotlib.pyplot
 googleapiclient.discovery
 build
 
