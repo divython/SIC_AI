@@ -5,9 +5,9 @@ streamlit
 re
 nltk
 TextBlob
+matplotlib
 matplotlib.pyplot
-googleapiclient.discovery 
-build
+googleapiclient.discovery.build
 
 nltk.download('punkt')
 nltk.download('stopwords')
