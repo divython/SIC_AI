@@ -205,6 +205,7 @@ def plot_sentiment_distribution(sentiment_scores):
 
 # Define the Streamlit app
 st.title('YouTube Video Analyzer')
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Add input for YouTube video URL
 video_url = st.text_input('Enter YouTube Video URL:', key='video_url')
