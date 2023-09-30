@@ -10,7 +10,6 @@ Original file is located at
 import re
 import streamlit as st
 import re
-import nltk
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 from googleapiclient.discovery import build
