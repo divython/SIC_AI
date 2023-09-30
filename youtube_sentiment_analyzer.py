@@ -69,7 +69,6 @@ def plot_sentiment_distribution(sentiment_scores):
     sizes = [sentiment_scores[label] for label in labels]
 
     plt.figure(figsize=(8, 6))
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#66b3ff', '#99ff99', '#ff9999'])
     plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.title('Sentiment Distribution of Comments')
