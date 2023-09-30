@@ -1,13 +1,14 @@
 google-api-python-client
 streamlit
 NLTK
-streamlit
+streamlit as st
 re
 nltk
 TextBlob
 matplotlib
-matplotlib.pyplot
-googleapiclient.discovery.build
+matplotlib.pyplot as plt
+googleapiclient.discovery
+build
 
 nltk.download('punkt')
 nltk.download('stopwords')
