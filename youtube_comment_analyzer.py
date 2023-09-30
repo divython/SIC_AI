@@ -17,14 +17,14 @@ def clean_text(text):
     text = text.lower()
     return text
 
-import nltk
+
 
 def tokenize_text(text):
     # Tokenize the text into words
     tokens = nltk.word_tokenize(text)
     return tokens
 
-from nltk.corpus import stopwords
+
 
 def remove_stopwords(tokens):
     stop_words = set(stopwords.words('english'))
@@ -32,7 +32,7 @@ def remove_stopwords(tokens):
     tokens = [word for word in tokens if word not in stop_words]
     return tokens
 
-from nltk.stem import WordNetLemmatizer
+
 
 def lemmatize_words(tokens):
     lemmatizer = WordNetLemmatizer()
@@ -47,7 +47,7 @@ def preprocess_text(comment):
     tokens = lemmatize_words(tokens)
     return ' '.join(tokens)
 
-from textblob import TextBlob
+
 
 def analyze_sentiment(comment):
     analysis = TextBlob(comment)
@@ -68,7 +68,7 @@ def perform_sentiment_analysis(preprocessed_comments):
 
     return sentiment_scores
 
-import matplotlib.pyplot as plt
+
 
 def plot_sentiment_distribution(sentiment_scores):
     labels = sentiment_scores.keys()
@@ -86,16 +86,7 @@ plot_sentiment_distribution(sentiment_scores)
 
 
 
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
 
-import re
-import nltk
-from textblob import TextBlob
-import matplotlib.pyplot as plt
-from googleapiclient.discovery import build
 
 # Function to fetch comments using YouTube Data API
 def fetch_youtube_comments(api_key, video_id):
@@ -139,7 +130,7 @@ plot_sentiment_distribution(sentiment_scores)
 
 
 
-import streamlit as st
+
 
 # Define the Streamlit app
 st.title('YouTube Video Analyzer')
@@ -147,12 +138,7 @@ st.title('YouTube Video Analyzer')
 # Add input for YouTube video URL
 video_url = st.text_input('Enter YouTube Video URL:')
 
-import streamlit as st
-import re
-import nltk
-from textblob import TextBlob
-import matplotlib.pyplot as plt
-from googleapiclient.discovery import build
+
 
 # Function to fetch YouTube comments using the YouTube Data API
 def fetch_youtube_comments(api_key, video_id):
