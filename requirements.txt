@@ -2,7 +2,7 @@ google-api-python-client
 Streamlit
 NLTK
 streamlit
-re
+re=2023.8.8
 nltk
 TextBlob
 matplotlib
