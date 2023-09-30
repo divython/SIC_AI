@@ -1,11 +1,11 @@
 google-api-python-client
 streamlit
 
-streamlit as st
+streamlit
 re
 nltk
 TextBlob
-matplotlib.pyplot as plt
+matplotlib.pyplot
 googleapiclient.discovery 
 build
 
