@@ -1,6 +1,6 @@
 google-api-python-client
 streamlit
-
+NLTK
 streamlit
 re
 nltk
