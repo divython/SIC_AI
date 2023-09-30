@@ -1,5 +1,5 @@
 google-api-python-client
-streamlit
+Streamlit
 NLTK
 streamlit
 re
@@ -10,6 +10,6 @@ matplotlib.pyplot
 googleapiclient.discovery
 build
 
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+punkt
+stopwords
+wordnet
